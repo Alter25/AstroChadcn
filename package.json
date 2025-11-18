@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.11",
+    "@astrojs/react": "^4.4.2",
     "@tailwindcss/vite": "^4.1.16",
     "@types/canvas-confetti": "^1.9.0",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "astro": "^5.15.9",
     "canvas-confetti": "^1.9.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.16"
   }
 }
