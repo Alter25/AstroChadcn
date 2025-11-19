@@ -1,0 +1,58 @@
+---
+
+---
+<div>
+  <form>
+    <section class="border my-12 p-12 pt-8 flex flex-col">
+      <div class="mb-8 flex flex-col">
+        <label for="title">Nombre:</label>
+        <input class="border w-[400px]" id="title" type="text">
+      </div>
+      <label for="description">Descripcion:</label>
+      <textarea class="border h-[120px]" name="description" id="description"></textarea>
+      <div class="mt-2">
+        <button id="savebtn" class="px-3 py-1 border">Save</button>
+        <button id="clearbtn" class="px-3 py-1 border">clear</button>
+      </div>
+    </section>
+  </form>
+  <section class="w-full flex justify-center">
+    <table>
+      <thead>
+        <tr>
+          <th>id:</th>
+          <th>title:</th>
+          <th>description:</th>
+          <th>date:</th>
+          <th>action:</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<style>
+  table{
+    min-width:800px;
+  }
+  tr{
+    padding:2px;
+    border:1px solid black;
+  }
+  th{
+    border:1px solid black;
+    padding-inline: 4px;
+    &:nth-child(2){
+      width:150px;
+    }
+    &:nth-child(3){
+      width: 300px;
+    }
+    &:nth-child(4){
+      width:80px;
+    }
+  }
+</style>
