@@ -2,20 +2,18 @@
 
 ---
 <div>
-  <form>
     <section class="border my-12 p-12 pt-8 flex flex-col">
       <div class="mb-8 flex flex-col">
         <label for="title">Nombre:</label>
         <input class="border w-[400px]" id="title" type="text">
       </div>
-      <label for="description">Descripcion:</label>
-      <textarea class="border h-[120px]" name="description" id="description"></textarea>
+      <label for="content">Descripcion:</label>
+      <textarea class="border h-[120px]" name="description" id="content"></textarea>
       <div class="mt-2">
         <button id="savebtn" class="px-3 py-1 border">Save</button>
         <button id="clearbtn" class="px-3 py-1 border">clear</button>
       </div>
     </section>
-  </form>
   <section class="w-full flex justify-center">
     <table>
       <thead>
@@ -27,8 +25,14 @@
           <th>action:</th>
         </tr>
       </thead>
-      <tbody>
-
+      <tbody id="tbody">
+        <tr>
+          <td>some</td>
+          <td>some</td>
+          <td>some</td>
+          <td>some</td>
+          <td>some</td>
+        </tr>
       </tbody>
     </table>
   </section>
@@ -55,4 +59,40 @@
       width:80px;
     }
   }
+  td{
+    text-align: center;
+    border:1px solid black;
+  }
 </style>
+
+<script lang="ts" type="module">
+  const tbody = document?.getElementById("tbody");
+  const savebtn = document?.getElementById("savebtn") ;
+  const title = document?.getElementById("title").value;
+  const content = document?.getElementById("content").value;
+  let data = localStorage.getItem("data");
+  data = JSON.parse(data);
+
+  (function getData() {
+    data = JSON.parse(localStorage.getItem("data"));
+    console.log(data);
+  })()
+  function saveData(){
+    const date = new Date();
+    const fecha = date.toString().split(" ").slice(1,4).join("-");
+    const Task = {
+      id:data.length,
+      title,
+      content,
+      fecha,
+    }
+    data.push(Task);
+    localStorage.setItem("data",JSON.stringify(data));
+  }
+  function update(){
+
+  }
+  savebtn.addEventListener("click",()=>{
+    saveData();
+  })
+</script>
