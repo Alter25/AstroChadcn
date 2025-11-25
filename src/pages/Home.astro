@@ -65,34 +65,4 @@
   }
 </style>
 
-<script lang="ts" type="module">
-  const tbody = document?.getElementById("tbody");
-  const savebtn = document?.getElementById("savebtn") ;
-  const title = document?.getElementById("title").value;
-  const content = document?.getElementById("content").value;
-  let data = localStorage.getItem("data");
-  data = JSON.parse(data);
-
-  (function getData() {
-    data = JSON.parse(localStorage.getItem("data"));
-    console.log(data);
-  })()
-  function saveData(){
-    const date = new Date();
-    const fecha = date.toString().split(" ").slice(1,4).join("-");
-    const Task = {
-      id:data.length,
-      title,
-      content,
-      fecha,
-    }
-    data.push(Task);
-    localStorage.setItem("data",JSON.stringify(data));
-  }
-  function update(){
-
-  }
-  savebtn.addEventListener("click",()=>{
-    saveData();
-  })
-</script>
+<script type="module" src="../scripts/table.ts"></script>
